@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employees page</title>
+
+        <style>
+        body{
+            background-image: url('./Images/image1.png');
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+            color: white;
+            }
+        h2{
+            font-weight: 100;
+        }
+        #name{
+            width: fit-content ;
+        }
+
+        .box{
+            border:1px solid;
+            background-color:cadetblue; 
+            width: fit-content;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+        <h1>Hello Employees!!</h1>
+        <br>
+        <section class="BG">
+        <h2>Want to join our workforce? Fill the form below:</h2>
+
+        <form method="post" action="http://localhost:9000/jobapply" enctype="multipart/form-data">
+            
+        <section>
+            <label>Name</label>
+            <input type="text" name="Name"/>
+        </section>
+        <br>
+        <section>
+            <label>Apply for</label>
+            <!-- <select name="position">
+                <option>select a position</option>
+                <option value="FSD">Full Stack Developer</option>
+                <option value="L">Lecturer</option>
+                <option value="C">Coordinator</option>
+                <option value="M">Mentor</option>
+            </select> -->
+
+            <select name="position">
+                <option>select a position</option>
+                <option>Full Stack Developer</option>
+                <option>Lecturer</option>
+                <option>Coordinator</option>
+                <option>Mentor</option>
+            </select>
+        </section>
+        <br>
+        <section>
+            <label>Email</label>
+            <input type="email" name="Email"/>
+        </section>
+        <br>
+        <section>
+            <label>Mob</label>
+            <input type="number" name="Mob"/>
+    </section>
+    <br>
+    <input type="submit"/>
+    </form>
+    </section>
+ 
+    <br>
+    <br>
+    <br>
+
+   <section class="BG">
+    <form method="post" action="http://localhost:9000/resume" enctype="multipart/form-data">
+        <label>Upload your CV</label>
+        <input type="file" name="file"/>
+        <input type="submit">
+
+    </form>
+   </section>
+<br>
+<br>
+    <!-- create n delete employee profile:.......................................................... -->
+    <section class="BG">
+        <h2>Create your own employee profile</h2>
+        <span><input id="name" type="text" placeholder="Ex:Name=ABC"/></span>
+        <span><a id="anchor3" href="http://localhost:9000/createProfile/?" target="_blank"><button onclick="CreateProfile()">click here</button></a></span> 
+    </section>
+    
+    <br>
+
+    <section class="BG">
+        <h2>Delete your employee profile</h2>
+        <span><input id="name2" type="text" placeholder="Ex:Name=ABC"/></span>
+        <span><a id="anchor4" href="http://localhost:9000/deleteProfile/?" target="_blank"><button onclick="DeleteProfile()">click here</button></a></span> 
+    
+    </section>
+
+<br>
+<br>
+    <!-- PresentLog .......Not working...............................................-->
+<!-- 
+    <h2>Mark ur Presence</h2>
+    <form method="get" action="http://localhost:9000/Present" target="_blank">
+    <label>EmpId</label>
+    <input type="number" name="id"/>
+    <label>In</label>
+    <input type="text" name="in" placeholder="Ex:YES"/>
+    <button type="submit">Punch</button>
+    </form> -->
+
+   </div> 
+</body>
+
+<script>
+    function CreateProfile(){
+        const NameEntered=document.getElementById('name').value;
+        document.getElementById('anchor3').href=document.getElementById('anchor3').href+NameEntered;
+    }
+
+    function DeleteProfile(){
+        const NameEntered=document.getElementById('name2').value;
+       // console.log(NameEntered);
+        document.getElementById('anchor4').href=document.getElementById('anchor4').href+NameEntered;
+       // console.log(document.getElementById('anchor3').href);
+
+    }
+</script>
+</html>
+
